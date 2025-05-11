@@ -1,0 +1,27 @@
+*** Settings ***
+Library  SeleniumLibrary
+Library  collections2
+Library     SSHLibrary
+*** Variables ***
+
+*** Test Cases ***
+first testcase
+    [Documentation]  this is my first testcase
+    Open Browser   https://www.amazon.in/s?k=flipkart&adgrpid=1326012633048780&hvadid=82876055231412&hvbmt=be&hvdev=c&hvlocphy=149009&hvnetw=o&hvqmt=e&hvtargid=kwd-82876681051014%3Aloc-90&hydadcr=15412_2338239&msclkid=3ba3be9d62391d4a80add9ae08483cd0&tag=msndeskstdin-21&ref=pd_sl_8mpp1ql5l2_e   chrome
+    Maximize Browser Window
+    sleep  2s
+    click element   //input[@name="field-keywords"]
+    Capture Page Screenshot
+    input text    //input[@name="field-keywords"]    dresses
+    Run Keyword AND Ignore Error    //input[@name="field-keywords"
+    Capture Page Screenshot
+    close browser
+
+second testcase
+    [Documentation]  this is my first testcase
+    Open Browser   https://www.amazon.in/s?k=flipkart&adgrpid=1326012633048780&hvadid=82876055231412&hvbmt=be&hvdev=c&hvlocphy=149009&hvnetw=o&hvqmt=e&hvtargid=kwd-82876681051014%3Aloc-90&hydadcr=15412_2338239&msclkid=3ba3be9d62391d4a80add9ae08483cd0&tag=msndeskstdin-21&ref=pd_sl_8mpp1ql5l2_e   chrome
+    Maximize Browser Window
+    sleep  2s
+    click element   //input[@name="field-keywords"]
+    input text    //input[@name="field-keywords"]    dresses
+    close browser
